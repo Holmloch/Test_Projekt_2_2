@@ -39,6 +39,11 @@ public class Patient {
 
     //TODO: Metoder (med specifikation) til at vedligeholde link til Ordination
 
+    /**
+     * Tilføjer ordanination til patients liste med ordinationer.
+     * pre: ordination er ikke null
+     * @param ordination
+     */
     public void addOrdination(Ordination ordination) {
         if (!ordinationer.contains(ordination)) {
             ordinationer.add(ordination);

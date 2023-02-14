@@ -37,7 +37,7 @@ public class Controller {
 	public PN opretPNOrdination(LocalDate startDen, LocalDate slutDen,
 			Patient patient, Laegemiddel laegemiddel, double antal) {
 		// TODO
-		if (startDen.isAfter(slutDen)) {
+		if (!startDen.isAfter(slutDen)) {
 			PN pn = new PN(startDen, slutDen, antal, patient);
 			pn.setLaegemiddel(laegemiddel);
 			return pn;
@@ -57,7 +57,7 @@ public class Controller {
 			double morgenAntal, double middagAntal, double aftenAntal,
 			double natAntal) {
 		// TODO
-		if (startDen.isAfter(slutDen)) {
+		if (!startDen.isAfter(slutDen)) {
 			DagligFast df = new DagligFast(startDen, slutDen, morgenAntal, middagAntal, aftenAntal, natAntal, patient);
 			df.setLaegemiddel(laegemiddel);
 			return df;
@@ -97,6 +97,11 @@ public class Controller {
 	 */
 	public void ordinationPNAnvendt(PN ordination, LocalDate dato) {
 		// TODO
+		if (dato.isAfter(ordination.getStartDen()) && dato.isBefore(ordination.getSlutDen())) {
+			ordination.givDosis(dato);
+		} else {
+			throw new IllegalArgumentException();
+		}
 	}
 
 	/**
@@ -107,7 +112,13 @@ public class Controller {
 	 */
 	public double anbefaletDosisPrDoegn(Patient patient, Laegemiddel laegemiddel) {
 		//TODO
-		return 0;
+			if (patient.getVaegt() < 25) {
+				return patient.getVaegt() * laegemiddel.getEnhedPrKgPrDoegnLet();
+			} else if (patient.getVaegt() > 120) {
+				return patient.getVaegt() * laegemiddel.getEnhedPrKgPrDoegnTung();
+			} else {
+				return patient.getVaegt() * laegemiddel.getEnhedPrKgPrDoegnNormal();
+			}
 	}
 
 	/**
