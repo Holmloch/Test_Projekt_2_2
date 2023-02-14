@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 
+import static java.time.temporal.ChronoUnit.DAYS;
+
 public class DagligSkaev extends Ordination{
     private ArrayList<Dosis> dosisAL;
 
@@ -11,7 +13,6 @@ public class DagligSkaev extends Ordination{
         super(startDen, slutDen);
         dosisAL = new ArrayList<>();
     }
-    //hej
 
 
     public void opretDosis(LocalTime tid, double antal) {
@@ -23,16 +24,20 @@ public class DagligSkaev extends Ordination{
 
     @Override
     public double samletDosis() {
-        return 0;
+        return doegnDosis() * DAYS.between(super.getStartDen(), super.getSlutDen());
     }
 
     @Override
     public double doegnDosis() {
-        return 0;
+        double doegnDosis = 0;
+        for (int i = 0; i < dosisAL.size(); i++) {
+            doegnDosis += dosisAL.get(i).getAntal();
+        }
+        return doegnDosis;
     }
 
     @Override
     public String getType() {
-        return null;
+        return "Daglig skæv";
     }
 }
