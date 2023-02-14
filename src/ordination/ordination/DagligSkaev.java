@@ -9,8 +9,8 @@ import static java.time.temporal.ChronoUnit.DAYS;
 public class DagligSkaev extends Ordination{
     private ArrayList<Dosis> dosisAL;
 
-    public DagligSkaev(LocalDate startDen, LocalDate slutDen) {
-        super(startDen, slutDen);
+    public DagligSkaev(LocalDate startDen, LocalDate slutDen, Patient patient) {
+        super(startDen, slutDen, patient);
         dosisAL = new ArrayList<>();
     }
 
@@ -19,6 +19,10 @@ public class DagligSkaev extends Ordination{
         // TODO
         Dosis dosis = new Dosis(tid, antal);
         dosisAL.add(dosis);
+    }
+
+    public ArrayList<Dosis> getDoser() {
+        return dosisAL;
     }
 
 
