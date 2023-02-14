@@ -12,9 +12,11 @@ public abstract class Ordination {
     // TODO constructor (med specifikation)
 
     /**
-     *Opretter en ordination.
+     * Opretter en ordination.
+     * Pre: startDen, slutDen og patient er ikke null
      * @param startDen
      * @param slutDen
+     * @param patient
      */
     public Ordination(LocalDate startDen, LocalDate slutDen, Patient patient) {
         this.startDen = startDen;
