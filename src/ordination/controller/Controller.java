@@ -55,7 +55,9 @@ public class Controller {
 			double morgenAntal, double middagAntal, double aftenAntal,
 			double natAntal) {
 		// TODO
-		return null;
+		DagligFast df = new DagligFast(startDen, slutDen, morgenAntal, middagAntal, aftenAntal, natAntal, patient);
+		df.setLaegemiddel(laegemiddel);
+		return df;
 	}
 
 	/**
