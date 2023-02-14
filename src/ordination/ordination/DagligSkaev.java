@@ -8,6 +8,7 @@ public class DagligSkaev extends Ordination{
     private LocalDate startDen;
     private LocalDate slutDen;
     private ArrayList<Dosis> dosis;
+    //hej
 
 
     public void opretDosis(LocalTime tid, double antal) {
