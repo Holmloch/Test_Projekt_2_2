@@ -61,9 +61,14 @@ public class Controller {
 			double morgenAntal, double middagAntal, double aftenAntal,
 			double natAntal) {
 		// TODO
-		DagligFast df = new DagligFast(startDen, slutDen, morgenAntal, middagAntal, aftenAntal, natAntal, patient);
-		df.setLaegemiddel(laegemiddel);
-		return df;
+		if (startDen.isAfter(slutDen)) {
+			DagligFast df = new DagligFast(startDen, slutDen, morgenAntal, middagAntal, aftenAntal, natAntal, patient);
+			df.setLaegemiddel(laegemiddel);
+			return df;
+		}
+		else {
+			throw new IllegalArgumentException();
+		}
 	}
 
 	/**
@@ -78,6 +83,7 @@ public class Controller {
 			LocalDate slutDen, Patient patient, Laegemiddel laegemiddel,
 			LocalTime[] klokkeSlet, double[] antalEnheder) {
 		// TODO
+
 		return null;
 	}
 
