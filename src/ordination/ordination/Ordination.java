@@ -6,9 +6,18 @@ import java.time.temporal.ChronoUnit;
 public abstract class Ordination {
     private LocalDate startDen;
     private LocalDate slutDen;
-
     // TODO Link til Laegemiddel
+    private Laegemiddel laegemiddel;
+
     // TODO constructor (med specifikation)
+    public Ordination(LocalDate startDen, LocalDate slutDen) {
+        this.startDen = startDen;
+        this.slutDen = slutDen;
+    }
+
+    public void setLaegemiddel(Laegemiddel laegemiddel) {
+        this.laegemiddel = laegemiddel;
+    }
 
     public LocalDate getStartDen() {
         return startDen;
