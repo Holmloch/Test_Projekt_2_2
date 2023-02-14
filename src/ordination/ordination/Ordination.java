@@ -16,13 +16,20 @@ public abstract class Ordination {
      * @param startDen
      * @param slutDen
      */
-    public Ordination(LocalDate startDen, LocalDate slutDen) {
+    public Ordination(LocalDate startDen, LocalDate slutDen, Patient patient) {
         this.startDen = startDen;
         this.slutDen = slutDen;
+        patient.addOrdination(this);
     }
 
     public void setLaegemiddel(Laegemiddel laegemiddel) {
-        this.laegemiddel = laegemiddel;
+        if (laegemiddel != this.laegemiddel) {
+            this.laegemiddel = laegemiddel;
+        }
+    }
+
+    public Laegemiddel getLaegemiddel() {
+        return laegemiddel;
     }
 
     public LocalDate getStartDen() {
