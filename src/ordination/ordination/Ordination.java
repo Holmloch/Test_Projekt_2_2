@@ -10,6 +10,12 @@ public abstract class Ordination {
     private Laegemiddel laegemiddel;
 
     // TODO constructor (med specifikation)
+
+    /**
+     *Opretter en ordination.
+     * @param startDen
+     * @param slutDen
+     */
     public Ordination(LocalDate startDen, LocalDate slutDen) {
         this.startDen = startDen;
         this.slutDen = slutDen;
