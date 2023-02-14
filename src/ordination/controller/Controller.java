@@ -4,11 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 
-import ordination.ordination.DagligFast;
-import ordination.ordination.DagligSkaev;
-import ordination.ordination.Laegemiddel;
-import ordination.ordination.PN;
-import ordination.ordination.Patient;
+import ordination.ordination.*;
 import ordination.storage.Storage;
 
 
@@ -83,8 +79,14 @@ public class Controller {
 			LocalDate slutDen, Patient patient, Laegemiddel laegemiddel,
 			LocalTime[] klokkeSlet, double[] antalEnheder) {
 		// TODO
-
-		return null;
+		if (klokkeSlet.length == antalEnheder.length && !startDen.isAfter(slutDen)) {
+			DagligSkaev ds = new DagligSkaev(startDen, slutDen, patient, klokkeSlet, antalEnheder);
+			ds.setLaegemiddel(laegemiddel);
+			return ds;
+		}
+		else {
+			throw new IllegalArgumentException();
+		}
 	}
 
 	/**
@@ -116,7 +118,17 @@ public class Controller {
 	public int antalOrdinationerPrVægtPrLægemiddel(double vægtStart,
 			double vægtSlut, Laegemiddel laegemiddel) {
 		// TODO
-		return 0;
+		int result = 0;
+		for (Patient p : storage.getAllPatienter()) {
+			if (vægtStart <= p.getVaegt() && p.getVaegt() <= vægtSlut) {
+				for (Ordination o : p.getOrdinationer()) {
+					if (o.getLaegemiddel() == laegemiddel) {
+						result++;
+					}
+				}
+			}
+		}
+		return result;
 	}
 
 	public List<Patient> getAllPatienter() {
