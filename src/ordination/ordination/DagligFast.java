@@ -30,7 +30,7 @@ public class DagligFast extends Ordination {
     @Override
     public double doegnDosis() {
         double result = 0.0;
-        for (int i = 0; i <= 4; i++ ) {
+        for (int i = 0; i <= 3; i++ ) {
             result += doser[i].getAntal();
         }
         return result;
