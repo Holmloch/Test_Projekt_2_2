@@ -15,7 +15,6 @@ public class DagligFast extends Ordination {
         doser[1] = new Dosis(LocalTime.of(12,0),middagsAntal);
         doser[2] = new Dosis(LocalTime.of(18,0),aftenAntal);
         doser[3] = new Dosis(LocalTime.of(23, 59), natAntal);
-
     }
 
     public Dosis[] getDoser() {
