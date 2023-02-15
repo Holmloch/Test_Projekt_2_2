@@ -180,8 +180,6 @@ public class Controller {
 	}
 
 	public void createSomeObjects() {
-		this.opretPatient("123234-4937", "Børge Børgesen", 13);
-		this.opretPatient("262532-2311", "Jens Jensen", 24);
 		this.opretPatient("121256-0512", "Jane Jensen", 63.4);
 		this.opretPatient("070985-1153", "Finn Madsen", 83.2);
 		this.opretPatient("050972-1233", "Hans Jørgensen", 89.4);
@@ -189,6 +187,8 @@ public class Controller {
 		this.opretPatient("090149-2529", "Ib Hansen", 87.7);
 		this.opretPatient("298327-1827", "Anders Madsen",120);
 		this.opretPatient("293618-2937", "Oliver Oliversen", 126);
+		this.opretPatient("123234-4937", "Børge Børgesen", 13);
+		this.opretPatient("262532-2311", "Jens Jensen", 24);
 
 		this.opretLaegemiddel("Acetylsalicylsyre", 0.1, 0.15, 0.16, "Styk");
 		this.opretLaegemiddel("Paracetamol", 1, 1.5, 2, "Ml");
