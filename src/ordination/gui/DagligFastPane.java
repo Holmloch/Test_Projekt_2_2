@@ -3,6 +3,7 @@ package ordination.gui;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+//Hej
 
 public class DagligFastPane extends GridPane {
     private TextField txtMorgen = new TextField();
