@@ -7,6 +7,7 @@ import java.time.LocalTime;
 import static java.time.temporal.ChronoUnit.DAYS;
 
 public class DagligFast extends Ordination {
+    //H
     private Dosis[] doser;
     public DagligFast(LocalDate startDen, LocalDate slutDen, double morgenAntal, double middagsAntal, double aftenAntal, double natAntal, Patient patient) {
         super(startDen, slutDen, patient);
