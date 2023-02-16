@@ -4,6 +4,8 @@ package ordination.controller;
 import ordination.ordination.*;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 class ControllerTest {
 
     @Test
@@ -25,9 +27,10 @@ class ControllerTest {
         Laegemiddel laegemiddel = new Laegemiddel("Paracetamol", 1, 1.5, 2, "Ml");
         Patient patient = new Patient("123234-4937", "Børge Børgesen", 13);
         //Act
-        //double faktiskAnbefaletDosisPrDoegn
+        double faktiskAnbefaletDosisPrDoegn = Controller.getTestController().anbefaletDosisPrDoegn(patient, laegemiddel);
 
         //Assert
-
+        double forventetAnbefaletDosisPrDoegn = 13.0;
+        assertEquals(forventetAnbefaletDosisPrDoegn,faktiskAnbefaletDosisPrDoegn);
     }
 }
