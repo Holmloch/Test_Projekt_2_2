@@ -11,6 +11,7 @@ class ControllerTest {
         //Arrange
         Patient patient = new Patient("121256-0512", "Jane Jensen", 63.4);
         Laegemiddel laegemiddel = new Laegemiddel("Paracetamol", 1, 1.5, 2, "Ml");
+        Controller controller = Controller.getController();
 
         //Act
 
