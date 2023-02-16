@@ -18,8 +18,33 @@ class ControllerTest {
         Laegemiddel laegemiddel = new Laegemiddel("Paracetamol", 1, 1.5, 2, "Ml");
         Controller controller = Controller.getController();
 
+        double morgenAntal = 1;
+        double middagAntal = 2;
+        double aftenAntal = 0;
+        double natAntal = 2;
+
         //Act
-        DagligFast dagligFast = controller.opretDagligFastOrdination(LocalDate.of(2023, 02, 10), LocalDate.of(2023, 02, 20), patient, laegemiddel, 1, 2, 0, 2);
+        DagligFast dagligFast = controller.opretDagligFastOrdination(LocalDate.of(2023, 02, 10), LocalDate.of(2023, 02, 20), patient, laegemiddel, morgenAntal, middagAntal, aftenAntal, natAntal);
+
+        //Assert
+        boolean actualBoolean = patient.getOrdinationer().contains(dagligFast);
+        assertTrue(actualBoolean);
+    }
+
+    @Test
+    void tc7_opretDagligFastOrdination() {
+        //Arrange 1
+        Patient patient = new Patient("121256-0512", "Jane Jensen", 63.4);
+        Laegemiddel laegemiddel = new Laegemiddel("Paracetamol", 1, 1.5, 2, "Ml");
+        Controller controller = Controller.getController();
+
+        double morgenAntal = 1;
+        double middagAntal = 2;
+        double aftenAntal = 0;
+        double natAntal = 2;
+
+        //Act
+        DagligFast dagligFast = controller.opretDagligFastOrdination(LocalDate.of(2023, 02, 20), LocalDate.of(2023, 02, 10), patient, laegemiddel, morgenAntal, middagAntal, aftenAntal, natAntal);
 
         //Assert
         boolean actualBoolean = patient.getOrdinationer().contains(dagligFast);
