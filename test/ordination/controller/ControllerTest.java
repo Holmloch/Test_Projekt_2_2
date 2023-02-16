@@ -4,6 +4,8 @@ package ordination.controller;
 import ordination.ordination.*;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 class ControllerTest {
 
     @Test
@@ -28,6 +30,7 @@ class ControllerTest {
         double faktiskAnbefaletDosisPrDoegn = Controller.getTestController().anbefaletDosisPrDoegn(patient, laegemiddel);
 
         //Assert
-
+        double forventetAnbefaletDosisPrDoegn = 13.0;
+        assertEquals(forventetAnbefaletDosisPrDoegn,faktiskAnbefaletDosisPrDoegn);
     }
 }
