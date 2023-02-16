@@ -4,10 +4,9 @@ package ordination.controller;
 import ordination.ordination.*;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.time.LocalDate;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 class ControllerTest {
 
@@ -44,11 +43,11 @@ class ControllerTest {
         double natAntal = 2;
 
         //Act
-        DagligFast dagligFast = controller.opretDagligFastOrdination(LocalDate.of(2023, 02, 20), LocalDate.of(2023, 02, 10), patient, laegemiddel, morgenAntal, middagAntal, aftenAntal, natAntal);
-
         //Assert
-        boolean actualBoolean = patient.getOrdinationer().contains(dagligFast);
-        assertTrue(actualBoolean);
+        Exception forventet = assertThrows(RuntimeException.class, () -> {
+            controller.opretDagligFastOrdination(LocalDate.of(2023, 02, 20), LocalDate.of(2023, 02, 10), patient, laegemiddel, morgenAntal, middagAntal, aftenAntal, natAntal);
+        });
+        assertEquals(forventet.getMessage(), "IllegalArgumentException");
     }
 
     @Test
@@ -62,6 +61,7 @@ class ControllerTest {
         //Assert
         double forventetAnbefaletDosisPrDoegn = 13.0;
         assertEquals(forventetAnbefaletDosisPrDoegn,faktiskAnbefaletDosisPrDoegn);
+
     }
 
     @Test

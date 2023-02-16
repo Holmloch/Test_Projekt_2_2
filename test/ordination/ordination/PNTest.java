@@ -8,5 +8,10 @@ class PNTest {
 
     @Test
     void givDosis() {
+        //Arrange
+
+        //Act
+
+        //Assert
     }
 }
