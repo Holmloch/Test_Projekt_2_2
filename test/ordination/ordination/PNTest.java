@@ -36,7 +36,7 @@ class PNTest {
         boolean givDosis = pn.givDosis(LocalDate.of(2021, 01, 01));
 
         //Assert
-        boolean actualBoolean = pn.getDatoer().contains(LocalDate.of(2021, 01, 10));
+        boolean actualBoolean = pn.getDatoer().contains(LocalDate.of(2021, 01, 01));
 
         assertTrue(actualBoolean);
     }
