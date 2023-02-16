@@ -21,7 +21,7 @@ class DagligSkaevTest {
         DagligSkaev dagligSkaev = new DagligSkaev(LocalDate.of(2022, 2, 3), LocalDate.of(2022, 2, 9), patient, kl, an);
         Dosis dosis = dagligSkaev.opretDosis(LocalTime.of(10, 30), 4);
 
-        boolean actualBool = dagligSkaev.getDoser().contains();
+        boolean actualBool = dagligSkaev.getDoser().contains(dosis);
         assertTrue(actualBool);
     }
 }

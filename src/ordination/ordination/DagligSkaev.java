@@ -18,10 +18,11 @@ public class DagligSkaev extends Ordination{
     }
 
 
-    public void opretDosis(LocalTime tid, double antal) {
+    public Dosis opretDosis(LocalTime tid, double antal) {
         // TODO
         Dosis dosis = new Dosis(tid, antal);
         dosisAL.add(dosis);
+        return dosis;
     }
 
     public ArrayList<Dosis> getDoser() {
@@ -37,8 +38,8 @@ public class DagligSkaev extends Ordination{
     @Override
     public double doegnDosis() {
         double doegnDosis = 0;
-        for (int i = 0; i < dosisAL.size(); i++) {
-            doegnDosis += dosisAL.get(i).getAntal();
+        for (Dosis dosis : dosisAL) {
+            doegnDosis += dosis.getAntal();
         }
         return doegnDosis;
     }
