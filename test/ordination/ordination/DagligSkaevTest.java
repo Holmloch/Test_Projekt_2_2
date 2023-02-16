@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class DagligSkaevTest {
 
     @Test
-    void t14_opretDosis() {
+    void t15_opretDosis() {
 
         Patient patient = new Patient("59841720", "Bingo Dorte", 78);
         LocalTime[] kl = { LocalTime.of(12, 0), LocalTime.of(12, 40), LocalTime.of(16, 0), LocalTime.of(18, 45) };

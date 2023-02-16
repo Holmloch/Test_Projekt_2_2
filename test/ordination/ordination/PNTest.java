@@ -56,4 +56,19 @@ class PNTest {
 
         assertTrue(actualBoolean);
     }
+
+    @Test
+    void tc12_givDosis() {
+        //Arrange
+        Laegemiddel laegemiddel = new Laegemiddel("Paracetamol", 1, 1.5, 2, "Ml");
+        Patient patient = new Patient("121256-0512", "Jane Jensen", 63.4);
+        PN pn = new PN(LocalDate.of(2021, 01, 10), LocalDate.of(2021, 01, 01), 2, patient);
+
+        //Act
+        //Assert
+        Exception forventet = assertThrows(RuntimeException.class, () -> {
+            pn.givDosis(LocalDate.of(2021, 01, 02));
+        });
+        assertEquals("Ugyldig dato", forventet.getMessage());
+    }
 }

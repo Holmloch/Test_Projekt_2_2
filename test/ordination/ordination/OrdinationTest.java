@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class OrdinationTest {
 
     @Test
-    void tc12_antalDage() {
+    void tc13_antalDage() {
         //Arrange
         Patient patient = new Patient("123234-4937", "Børge Børgesen", 24);
         DagligFast dagligFast = new DagligFast(LocalDate.of(2021,1,23), LocalDate.of(2021, 1, 24),1,2,1,1,patient);
@@ -23,7 +23,7 @@ class OrdinationTest {
     }
 
     @Test
-    void tc13_antalDage() {
+    void tc14_antalDage() {
         //Arrange
         Patient patient = new Patient("123234-4937", "Børge Børgesen", 24);
         DagligFast dagligFast = new DagligFast(LocalDate.of(2021,1,23), LocalDate.of(2021, 1, 23),1,2,1,1,patient);
