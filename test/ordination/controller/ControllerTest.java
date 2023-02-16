@@ -58,6 +58,7 @@ class ControllerTest {
         //Assert
         double forventetAnbefaletDosisPrDoegn = 95.1;
         assertEquals(forventetAnbefaletDosisPrDoegn,faktiskAnbefaletDosisPrDoegn);
+
     }
 
     @Test
