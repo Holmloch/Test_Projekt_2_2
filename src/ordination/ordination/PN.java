@@ -23,12 +23,15 @@ public class PN extends Ordination{
      * @return
      */
     public boolean givDosis(LocalDate givesDen) {
-        if (givesDen.isAfter(super.getStartDen().minusDays(1)) && givesDen.isBefore(getSlutDen())) {
+        LocalDate startDen = super.getStartDen().minusDays(1);
+        LocalDate slutDen = super.getSlutDen().plusDays(1);
+
+        if (givesDen.isAfter(startDen) && givesDen.isBefore(slutDen)) {
             datoer.add(givesDen);
             return true;
+        } else {
+            throw new IllegalArgumentException("Ugyldig dato");
         }
-
-        return false;   
     }
 
     //(antal gange ordinationen er anvendt * antal enheder)
