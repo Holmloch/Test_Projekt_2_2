@@ -5,6 +5,9 @@ import ordination.ordination.*;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.time.LocalDate;
 
 class ControllerTest {
 
@@ -16,9 +19,11 @@ class ControllerTest {
         Controller controller = Controller.getController();
 
         //Act
+        DagligFast dagligFast = controller.opretDagligFastOrdination(LocalDate.of(2023, 02, 10), LocalDate.of(2023, 02, 20), patient, laegemiddel, 1, 2, 0, 2);
 
         //Assert
-
+        boolean actualBoolean = patient.getOrdinationer().contains(dagligFast);
+        assertTrue(actualBoolean);
     }
 
     @Test
