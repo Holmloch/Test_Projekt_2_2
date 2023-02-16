@@ -6,11 +6,10 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
     </content>
-    <orderEntry type="jdk" jdkName="openjdk-18" jdkType="JavaSDK" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="javafx64" level="application" />
-    <orderEntry type="library" exported="" name="javafx.base" level="application" />
-    <orderEntry type="library" exported="" name="mockito-core-4.3.1" level="application" />
+    <orderEntry type="library" exported="" name="javafx" level="application" />
     <orderEntry type="module-library" scope="TEST">
       <library name="JUnit5.8.1">
         <CLASSES>
@@ -27,5 +26,6 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="Mockito" level="application" />
   </component>
 </module>
