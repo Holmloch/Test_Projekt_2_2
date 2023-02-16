@@ -1,6 +1,7 @@
 package ordination.controller;
 
 
+import ordination.ordination.*;
 import org.junit.jupiter.api.Test;
 
 class ControllerTest {
