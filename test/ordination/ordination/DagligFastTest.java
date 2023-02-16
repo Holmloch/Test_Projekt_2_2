@@ -15,7 +15,7 @@ class DagligFastTest {
         DagligFast dagligFast = new DagligFast(LocalDate.of(2012, 12, 12), LocalDate.of(2012, 12, 12), 2, 0, 1, 0, patient);
         //act
         double faktiskDaglig = dagligFast.doegnDosis();
-        //assert
+        //asserts
         double forventetDaglig = 3.0;
         assertEquals(forventetDaglig, faktiskDaglig);
     }
