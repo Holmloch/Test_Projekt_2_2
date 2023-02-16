@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.time.LocalDate;
+
 class ControllerTest {
 
     @Test
@@ -16,6 +18,7 @@ class ControllerTest {
         Controller controller = Controller.getController();
 
         //Act
+        controller.opretDagligFastOrdination(LocalDate.of(2023, 02, 10), LocalDate.of(2023, 02, 20), patient, laegemiddel, 1, 2, 0, 2);
 
         //Assert
 
