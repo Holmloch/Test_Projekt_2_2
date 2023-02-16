@@ -49,7 +49,7 @@ class PNTest {
         PN pn = new PN(LocalDate.of(2021, 01, 01), LocalDate.of(2021, 01, 02), 2, patient);
 
         //Act
-        boolean givDosis = pn.givDosis(LocalDate.of(2021, 01, 10));
+        boolean givDosis = pn.givDosis(LocalDate.of(2021, 01, 01));
 
         //Assert
         boolean actualBoolean = pn.getDatoer().contains(LocalDate.of(2021, 01, 01));
