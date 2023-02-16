@@ -22,7 +22,11 @@ class ControllerTest {
     void tc1_anbefaletDosisPrDoegn() {
         //Arrange
         Laegemiddel laegemiddel = new Laegemiddel("Paracetamol", 1, 1.5, 2, "Ml");
+        Patient patient = new Patient("123234-4937", "Børge Børgesen", 13);
         //Act
+        //double faktiskAnbefaletDosisPrDoegn
+
+        //Assert
 
     }
 }
